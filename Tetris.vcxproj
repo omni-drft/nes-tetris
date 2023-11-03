@@ -96,7 +96,6 @@
     <ClCompile Include="src\Tetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\InputHandling.h" />
     <ClInclude Include="src\Tetromino.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -44,10 +44,42 @@ void TetrominoI::setPosition(float x, float y)
 
 void TetrominoI::rotateRight()
 {
-	;
+	float angle = 90.0f;
+	double pi = 3.14159265358979323846;
+
+	sf::Vector2f pivotPoint((shape[2].position + shape[3].position) / 2.0f);
+	
+	double radians = angle * pi / 180.0f;
+
+	double cosA = std::cos(radians);
+	double sinA = std::sin(radians);
+
+	for (int i = 0; i < 5; i++)
+	{
+		sf::Vector2f offset = shape[i].position - pivotPoint;
+		shape[i].position.x = pivotPoint.x + offset.x * cosA - offset.y * sinA;
+		shape[i].position.y = pivotPoint.y + offset.x * sinA + offset.y * cosA;
+	}
 }
 
 void TetrominoI::rotateLeft()
 {
-	;
+	{
+		float angle = -90.0f;
+		double pi = 3.14159265358979323846;
+
+		sf::Vector2f pivotPoint((shape[2].position + shape[3].position) / 2.0f);
+
+		double radians = angle * pi / 180.0f;
+
+		double cosA = std::cos(radians);
+		double sinA = std::sin(radians);
+
+		for (int i = 0; i < 5; i++)
+		{
+			sf::Vector2f offset = shape[i].position - pivotPoint;
+			shape[i].position.x = pivotPoint.x + offset.x * cosA - offset.y * sinA;
+			shape[i].position.y = pivotPoint.y + offset.x * sinA + offset.y * cosA;
+		}
+	}
 }

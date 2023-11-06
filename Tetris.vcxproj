@@ -92,11 +92,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Grid.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\Tetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Tetromino.h" />
+    <ClInclude Include="src\Grid.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

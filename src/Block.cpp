@@ -1,6 +1,6 @@
 #include "Block.h"
 
-Block::Block(sf::RenderWindow& window) : currentWindow(window)
+Block::Block(sf::RenderWindow* window) : currentWindow(window)
 {
 	cellSize = 32.0f;
 	rotationState = 0;
@@ -16,10 +16,10 @@ void Block::Draw()
 	for (Position item : tiles)
 	{
 		sf::RectangleShape block;
-		block.setSize(sf::Vector2f(cellSize - 1.0f, cellSize- 1.0f));
-		block.setPosition(sf::Vector2f(item.col * cellSize + 1.0f, item.row * cellSize + 1.0f));
+		block.setSize(sf::Vector2f(cellSize, cellSize));
+		block.setPosition(sf::Vector2f(item.col * cellSize, item.row * cellSize));
 		block.setFillColor(colors.at(id));
-		currentWindow.draw(block);
+		currentWindow->draw(block);
 	}
 }
 
@@ -41,4 +41,16 @@ std::vector<Position> Block::GetCellPositions()
 	}
 
 	return movedTiles;
+}
+
+void Block::RotateRight()
+{
+	rotationState++;
+	rotationState %= 4;
+}
+
+void Block::RotateLeft()
+{
+	rotationState += 3;
+	rotationState %= 4;
 }

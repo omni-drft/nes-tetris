@@ -1,6 +1,6 @@
 #include "Colors.h"
 
-const sf::Color gray = sf::Color::Color(26, 31, 40, 255);
+const sf::Color black = sf::Color::Color(0, 0, 0, 255);
 const sf::Color cyan = sf::Color::Color(1, 241, 240, 255);
 const sf::Color blue = sf::Color::Color(1, 0, 241, 255);
 const sf::Color orange = sf::Color::Color(240, 160, 0, 255);
@@ -11,5 +11,5 @@ const sf::Color red = sf::Color::Color(241, 0, 1, 255);
 
 std::vector<sf::Color> GetCellColors()
 {
-	return { gray, cyan, blue, orange, yellow, green, purple, red };
+	return { black, cyan, blue, orange, yellow, green, purple, red };
 }

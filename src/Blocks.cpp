@@ -8,7 +8,7 @@
 class IBlock : public Block
 {
 public:
-	IBlock(sf::RenderWindow& window) : Block(window) {
+	IBlock(sf::RenderWindow* window) : Block(window) {
 		id = 1;
 		cells[0] = { Position(1, 0), Position(1, 1),  Position(1, 2), Position(1, 3) };
 		cells[1] = { Position(0, 2), Position(1, 2),  Position(2, 2), Position(3, 2) };
@@ -22,7 +22,7 @@ public:
 class JBlock : public Block
 {
 public:
-	JBlock(sf::RenderWindow& window) : Block(window) {
+	JBlock(sf::RenderWindow* window) : Block(window) {
 		id = 2;
 		cells[0] = { Position(0, 0), Position(1, 0),  Position(1, 1), Position(1, 2) };
 		cells[1] = { Position(0, 1), Position(0, 2),  Position(1, 1), Position(2, 1) };
@@ -35,7 +35,7 @@ public:
 class LBlock : public Block
 {
 public:
-	LBlock(sf::RenderWindow& window) : Block(window) 
+	LBlock(sf::RenderWindow* window) : Block(window) 
 	{
 		id = 3;
 		cells[0] = { Position(0, 2), Position(1, 0),  Position(1, 1), Position(1, 2) };
@@ -49,7 +49,7 @@ public:
 class OBlock : public Block
 {
 public:
-	OBlock(sf::RenderWindow& window) : Block(window)
+	OBlock(sf::RenderWindow* window) : Block(window)
 	{
 		id = 4;
 		cells[0] = { Position(0, 0), Position(0, 1),  Position(1, 0), Position(1, 1) };
@@ -63,7 +63,7 @@ public:
 class SBlock : public Block
 {
 public:
-	SBlock(sf::RenderWindow& window) : Block(window)
+	SBlock(sf::RenderWindow* window) : Block(window)
 	{
 		id = 5;
 		cells[0] = { Position(0, 1), Position(0, 2),  Position(1, 0), Position(1, 1) };
@@ -77,7 +77,7 @@ public:
 class TBlock : public Block
 {
 public:
-	TBlock(sf::RenderWindow& window) : Block(window)
+	TBlock(sf::RenderWindow* window) : Block(window)
 	{
 		id = 6;
 		cells[0] = { Position(0, 1), Position(1, 0),  Position(1, 1), Position(1, 2) };
@@ -91,7 +91,7 @@ public:
 class ZBlock : public Block
 {
 public:
-	ZBlock(sf::RenderWindow& window) : Block(window)
+	ZBlock(sf::RenderWindow* window) : Block(window)
 	{
 		id = 7;
 		cells[0] = { Position(0, 0), Position(0, 1),  Position(1, 1), Position(1, 2) };

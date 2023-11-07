@@ -47,5 +47,7 @@ private:
 	bool blockCanRotate;
 
 	bool gameOver;
+
+	long score;
 };
 

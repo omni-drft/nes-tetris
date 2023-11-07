@@ -6,7 +6,7 @@ Grid::Grid(sf::RenderWindow* window) : currentWindow(window)
 {
 	rows = 20;
 	cols = 10;
-	blockSize = 32.0f;
+	blockSize = 24.0f;
 
 	Initialise();
 	colors = GetCellColors();
@@ -48,7 +48,7 @@ void Grid::Draw()
 			int cellValue = grid[i][j];
 			sf::RectangleShape block;
 			block.setSize(sf::Vector2f(blockSize, blockSize));
-			block.setPosition(sf::Vector2f(blockSize * j, blockSize * i));
+			block.setPosition(sf::Vector2f(80.0f + blockSize * j, 80.0f + blockSize * i));
 			block.setFillColor(colors.at(cellValue));
 			currentWindow->draw(block);
 		}

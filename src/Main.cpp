@@ -7,10 +7,10 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(768, 720), "NES-Tetris");
+	sf::RenderWindow window(sf::VideoMode(768, 640), "NES-Tetris");
 	Game game = Game(&window);
 
-	game.dropSpeed = 0.1;
+	//game.dropSpeed = 0.1;
 
 	sf::Clock clock;
 	sf::Time targetFrameTime = sf::seconds(1.0f / 60.0f);
@@ -35,7 +35,7 @@ int main()
 
 			game.HandleInput();
 
-			window.clear(sf::Color::Color(190, 190, 190, 255));
+			window.clear(sf::Color::Color(100, 100, 100, 255));
 		
 			game.Draw();
 

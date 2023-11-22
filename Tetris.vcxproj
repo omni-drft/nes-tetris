@@ -92,17 +92,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Block.h" />
-    <ClInclude Include="src\Colors.h" />
+    <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Grid.h" />
     <ClInclude Include="src\Position.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Block.cpp" />
     <ClCompile Include="src\Blocks.cpp" />
-    <ClCompile Include="src\Colors.cpp" />
+    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Grid.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Position.cpp" />

@@ -4,7 +4,6 @@ Block::Block(sf::RenderWindow* window) : currentWindow(window)
 {
 	cellSize = 24.0f;
 	rotationState = 0;
-	colors = GetCellColors();
 
 	xOffset = 0.0f;
 	yOffset = 0.0f;
@@ -19,6 +18,20 @@ void Block::Draw()
 		sf::RectangleShape block;
 		block.setSize(sf::Vector2f(cellSize, cellSize));
 		block.setPosition(sf::Vector2f(80.0f + item.col * cellSize, 80.0f + item.row * cellSize));
+		block.setFillColor(colors.at(id));
+		currentWindow->draw(block);
+	}
+}
+
+void Block::DrawAt(float x, float y)
+{
+	std::vector<Position> tiles = GetCellPositions();
+
+	for (Position item : tiles)
+	{
+		sf::RectangleShape block;
+		block.setSize(sf::Vector2f(cellSize, cellSize));
+		block.setPosition(sf::Vector2f(x + item.col * cellSize, y + item.row * cellSize));
 		block.setFillColor(colors.at(id));
 		currentWindow->draw(block);
 	}

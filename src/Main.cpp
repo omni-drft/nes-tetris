@@ -1,13 +1,15 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
+#include <Windows.h>
 #include <iostream>
 
 #include "Game.h"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(768, 640), "NES-Tetris");
+	FreeConsole();
+	sf::RenderWindow window(sf::VideoMode(700, 640), "NES-Tetris");
 	Game game = Game(&window);
 
 	//game.dropSpeed = 0.1;
@@ -35,7 +37,7 @@ int main()
 
 			game.HandleInput();
 
-			window.clear(sf::Color::Color(100, 100, 100, 255));
+			window.clear(sf::Color::Black);
 		
 			game.Draw();
 

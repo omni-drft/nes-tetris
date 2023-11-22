@@ -7,9 +7,9 @@ Grid::Grid(sf::RenderWindow* window) : currentWindow(window)
 	rows = 20;
 	cols = 10;
 	blockSize = 24.0f;
+	ClearedRows = 0;
 
 	Initialise();
-	colors = GetCellColors();
 }
 
 void Grid::Initialise()
@@ -80,7 +80,19 @@ int Grid::ClearFullRows()
 			MoveRowDown(i, cleared);
 		}
 	}
+	ClearedRows = cleared;
 	return cleared;
+}
+
+void Grid::Clear()
+{
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			grid[i][j] = 0;
+		}
+	}
 }
 
 bool Grid::isRowFull(int row)

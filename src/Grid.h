@@ -6,7 +6,6 @@
 #include <iostream>
 #include <vector>
 
-#include "Colors.h"
 
 class Grid
 {
@@ -20,6 +19,9 @@ public:
 	bool IsCellEmpty(int row, int col);
 
 	int ClearFullRows();
+	int ClearedRows;
+
+	void Clear();
 
 	int grid[20][10];
 private:
@@ -31,7 +33,12 @@ private:
 	int rows;
 	int cols;
 	float blockSize;
-	std::vector<sf::Color> colors;
+	std::vector<sf::Color> colors = { 
+		sf::Color::Black, sf::Color::White, sf::Color::White, 
+		sf::Color::White, sf::Color::White, sf::Color::White, 
+		sf::Color::White, sf::Color::White 
+	};
+
 
 	sf::RenderWindow* currentWindow;
 };

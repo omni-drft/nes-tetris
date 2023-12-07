@@ -216,6 +216,7 @@ void Game::HandleInput()
 		{
 			MoveBlockDown();
 			blockCanMove = false;
+			score++;
 		}
 	}
 	else

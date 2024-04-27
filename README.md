@@ -1,3 +1,9 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/omni-drft/nes-tetris) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/omni-drft/nes-tetris) ![GitHub top language](https://img.shields.io/github/languages/top/omni-drft/nes-tetris) ![GitHub License](https://img.shields.io/github/license/omni-drft/nes-tetris) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/omni-drft/nes-tetris)
+
+
+
+
+
 # NES-Tetris
 
 This project is a copy of original Tetris game that was published on NES console. It copies original scoring system and movement types preserving the retro style.

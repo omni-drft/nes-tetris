@@ -54,6 +54,10 @@ nunit-*.xml
 [Dd]ebugPS/
 [Rr]eleasePS/
 dlldata.c
+# Others
+*.exe
+*.sln
+*.vcxproj
 
 # Benchmark Results
 BenchmarkDotNet.Artifacts/
@@ -362,7 +366,3 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# Others
-.exe
-.sln
-.vcxproj

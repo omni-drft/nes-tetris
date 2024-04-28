@@ -27,6 +27,9 @@ This project is a copy of original Tetris game that was published on NES console
 * The project is configured for static linking. If you have problems with linking make sure that You use files compiled for static linking ([SFML](https://github.com/SFML/SFML) also supports dynamic linking).
 * Problems with linking may be caused wrong paths to library and header files. Make sure that You keep the same paths that are listed in premake5.lua file.
 
+## How to play?
+[Controls](HOWTOPLAY.md)
+
 ## Contributing
 Thank you for considering contributing to this project. I am accepting pull requests.
 If you have any suggestions, bug reports, or feature requests, feel free to open an issue on GitHub.

@@ -6,13 +6,14 @@
 #include <iostream>
 
 #include "Game.h"
+#include "Launcher.h"
 
 int main()
 {
 	FreeConsole();
 
 	sf::RenderWindow startWindow(sf::VideoMode(700, 640), "NES-Tetris Launcher");
-	sf::Clock testClock;
+	Launcher launcherWindow(&startWindow);
 
 	while (startWindow.isOpen())
 	{
@@ -24,8 +25,9 @@ int main()
 				startWindow.close();
 			}
 		}
-		if (testClock.getElapsedTime().asSeconds() >= 10)
-			break;
+
+		launcherWindow.LauncherLoop();
+
 	}
 
 	startWindow.close();

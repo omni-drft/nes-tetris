@@ -13,6 +13,17 @@ public:
 	Launcher(sf::RenderWindow* window);
 	void LauncherLoop();
 private:
+
+	sf::Font font;
+
+	sf::Text titleText;
+
+	sf::Text maxScoreText;
+	sf::Text maxScoreNum;
+
+	sf::Text gamesPlayedText;
+	sf::Text gamesPlayedNum;
+
 	GameData savedData;
 	sf::RenderWindow* window;
 };

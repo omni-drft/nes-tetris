@@ -23,10 +23,12 @@ int main()
 			if (event.type == sf::Event::Closed)
 			{
 				startWindow.close();
+				return 0;
 			}
 		}
-
+		startWindow.clear(sf::Color::Black);
 		launcherWindow.LauncherLoop();
+		startWindow.display();
 
 	}
 

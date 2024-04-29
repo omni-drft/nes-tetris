@@ -12,6 +12,7 @@ class Launcher
 public:
 	Launcher(sf::RenderWindow* window);
 	void LauncherLoop();
+	bool getExitFlag() { return exitFlag; }
 private:
 
 	sf::Font font;
@@ -24,6 +25,16 @@ private:
 	sf::Text gamesPlayedText;
 	sf::Text gamesPlayedNum;
 
+	sf::Text startText;
+	sf::Text exitText;
+
+	sf::Text startArrow;
+	sf::Text exitArrow;
+
 	GameData savedData;
 	sf::RenderWindow* window;
+
+	bool startExit;
+	bool isArrowPressed;
+	bool exitFlag;
 };

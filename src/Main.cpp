@@ -12,7 +12,11 @@ int main()
 {
 	FreeConsole();
 
-	sf::RenderWindow startWindow(sf::VideoMode(700, 640), "NES-Tetris Launcher");
+	while (true)
+	{
+
+
+	sf::RenderWindow startWindow(sf::VideoMode(700, 450), "NES-Tetris Launcher");
 	Launcher launcherWindow(&startWindow);
 
 	while (startWindow.isOpen())
@@ -29,6 +33,9 @@ int main()
 		startWindow.clear(sf::Color::Black);
 		launcherWindow.LauncherLoop();
 		startWindow.display();
+
+		if (launcherWindow.getExitFlag())
+			return 0;
 
 	}
 
@@ -75,6 +82,7 @@ int main()
 			
 		}
 		
+	}
 	}
 	return 0;
 }

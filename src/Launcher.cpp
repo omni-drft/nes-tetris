@@ -1,7 +1,7 @@
 #include "Launcher.h"
 
 Launcher::Launcher(sf::RenderWindow* window)
-	: window(window) 
+	: window(window), startExit(true), isArrowPressed(false), exitFlag(false)
 {
 	std::string file = "save.bin";
 	savedData = loadGameData(file);
@@ -67,7 +67,29 @@ Launcher::Launcher(sf::RenderWindow* window)
 	gamesPlayedNum.setFillColor(sf::Color::White);
 	gamesPlayedNum.setPosition(sf::Vector2f(450.0f, 190.0f));
 
-	
+	startText.setFont(font);
+	startText.setString("Start");
+	startText.setCharacterSize(24);
+	startText.setFillColor(sf::Color::White);
+	startText.setPosition(sf::Vector2f(290.0f, 320.0f));
+
+	exitText.setFont(font);
+	exitText.setString("Exit");
+	exitText.setCharacterSize(24);
+	exitText.setFillColor(sf::Color::White);
+	exitText.setPosition(sf::Vector2f(303.0f, 360.0f));
+
+	startArrow.setFont(font);
+	startArrow.setString(">");
+	startArrow.setCharacterSize(24);
+	startArrow.setFillColor(sf::Color::White);
+	startArrow.setPosition(sf::Vector2f(240.0f, 320.0f));
+
+	exitArrow.setFont(font);
+	exitArrow.setString(">");
+	exitArrow.setCharacterSize(24);
+	exitArrow.setFillColor(sf::Color::Red);
+	exitArrow.setPosition(sf::Vector2f(240.0f, 360.0f));
 
 }
 
@@ -78,4 +100,36 @@ void Launcher::LauncherLoop()
 	window->draw(maxScoreNum);
 	window->draw(gamesPlayedText);
 	window->draw(gamesPlayedNum);
+
+	window->draw(startText);
+	window->draw(exitText);
+
+	window->draw(startArrow);
+	window->draw(exitArrow);
+
+	if (startExit)
+	{
+		startArrow.setFillColor(sf::Color::White);
+		exitArrow.setFillColor(sf::Color::Black);
+	}
+	else
+	{
+		startArrow.setFillColor(sf::Color::Black);
+		exitArrow.setFillColor(sf::Color::White);
+	}
+
+	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) && !isArrowPressed)
+	{
+		startExit = !startExit;
+		isArrowPressed = true;
+	}
+
+	if (!(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up)))
+		isArrowPressed = false;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+		if (startExit)
+			window->close();
+		else
+			exitFlag = true;
 }

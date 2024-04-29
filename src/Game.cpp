@@ -315,8 +315,21 @@ void Game::LockBlock()
 	}
 	currentBlock = nextBlock;
 
-	if (!BlockFits())
+	if (!BlockFits() && !gameOver)
 	{
+		std::string fileName = "save.bin";
+		GameData newData;
+		GameData oldData = loadGameData(fileName);
+
+		if (oldData.maxScore < this->score)
+			newData.maxScore = this->score;
+
+		newData.gamesPlayed = ++oldData.gamesPlayed;
+		saveGameData(newData, fileName);
+
+		std::cout << newData.gamesPlayed << std::endl;
+		std::cout << newData.maxScore << std::endl;
+
 		gameOver = true;
 	}
 

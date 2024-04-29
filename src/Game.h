@@ -6,6 +6,7 @@
 #include "Grid.h"
 #include "Block.h"
 #include "Blocks.cpp"
+#include "GameData.h"
 
 #include <SFML/Graphics.hpp>	
 

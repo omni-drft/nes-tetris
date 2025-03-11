@@ -2,6 +2,7 @@
 
 Game::Game(sf::RenderWindow* window) : renderWindow(window), grid(Grid(window)), currentBlock(GetRandomBlock()), nextBlock(GetRandomBlock())
 {
+	exitGameFlag = false;
 	blocks = GetAllBlocks();
 	blockCanMove = true;
 	blockCanRotate = true;
@@ -178,7 +179,6 @@ void Game::HandleInput()
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 		{
-			gameOver = false;
 			grid.Clear();
 			score = 0;
 			lines = 0;
@@ -189,6 +189,8 @@ void Game::HandleInput()
 
 			scoreNumText.setCharacterSize(24);
 			scoreNumText.setPosition(sf::Vector2f(445.0f, 255.0f));
+
+			exitGameFlag = true;
 		}
 		else 
 			return;

@@ -27,6 +27,9 @@ public:
 	void MoveBlockRight();
 	void MoveBlockDown();
 
+	bool getGameOver() { return gameOver; }
+	bool getExitGameFlag() { return exitGameFlag; }
+
 	long score;
 	int lines;
 	int level;
@@ -76,6 +79,7 @@ private:
 	bool blockCanRotate;
 
 	bool gameOver;
+	bool exitGameFlag;
 
 	
 	sf::Font font;

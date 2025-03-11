@@ -10,6 +10,10 @@
 
 This project is a copy of original Tetris game that was published on NES console. It copies original scoring system and movement types preserving the retro style.
 
+<p align="center">
+  <img src="misc/game_screenshot.png", style="width: 20vw" />
+</p>
+
 ## Dependencies
 * [SFML](https://github.com/SFML/SFML) - simple graphics library for managing windows, handling input and rendering
 * [Premake5](https://github.com/premake) - build system
